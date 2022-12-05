@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-
-        const req = new XMLHttpRequest();
-        req.open('https://randomuser.me/api/')
-        req.onload = () => {
-            if (req.status == 200) {
-                // success
+        // RUN THIS IN LIVE SERVER!!!!
+        const promise_xhr = new Promise((success, failure) => {
+            const req = new XMLHttpRequest();
+            req.open('GET', 'https://randomuser.me/api/')
+            // req.open('GET', 'https://randomuser.me/api/123') // do this to see the error
+            req.onload = () => {
+                if (req.status == 200) {
+                    // success
+                    success(req.responseText)
+                }
+                else {
+                    // failure
+                    failure(req.response)
+                }
             }
-            else {
-                // failure
-            }
-        }
-        req.send()
-        
-
-
+            req.send()
+        });
+        promise_xhr.then(
+            // here second
+            (response) => { document.write (response)},
+            (err) => { document.write (`<p style="color:red"> ${err} </p>`)},
+        )
+        // be here first
     </script>
 </body>
+
 </html>
