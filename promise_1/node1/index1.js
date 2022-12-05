@@ -17,6 +17,7 @@ axiosRequest.get(`https://www.boredapi.com/api/activity`)
                             //return axiosRequest.get(`https://www.boredapi.com/api/activity`)
                         })
 
-
+// https://jsonplaceholder.typicode.com/todos/1
+// https://jsonplaceholder.typicode.com/albums/1
                       
 
