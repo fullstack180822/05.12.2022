@@ -1,4 +1,4 @@
-const my_promise_zugi = new Promise((success, failure) => {
+const axios_get = new Promise((success, failure) => {
     const rand = Math.floor(Math.random() * 100);
     console.log(f3)
     if (rand % 2 == 0) {
@@ -10,7 +10,7 @@ const my_promise_zugi = new Promise((success, failure) => {
     }
 })
 
-my_promise_zugi.then(
+axios_get.then(
      
      (error) => { console.log(`e-zugi ${error}`);}, // failure
      (value) => { console.log(`zugi ${value}`);}, // success
